@@ -20,11 +20,11 @@ const projects = [
     featured: true,
   },
   {
-    title: "Fortnite API Digest",
-    description: "Generated digest of the Verse API for Fortnite, helping developers understand the available functionality.",
+    title: "Persistent Player Stats",
+    description: "Commission work: Advanced persistent player statistics system in Verse for UEFN, featuring data persistence across sessions and leaderboard integration.",
     image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&auto=format&fit=crop&q=80",
-    tags: ["Verse", "API", "Documentation"],
-    githubUrl: "https://gist.github.com/kamyker/9b9166ab08b115f64111b9da02c855bb",
+    tags: ["Verse", "UEFN", "Commission", "Persistence"],
+    demoUrl: "https://x.com/kamyker/status/1997449569156890729",
   },
   {
     title: "UEFN Creative Maps",
