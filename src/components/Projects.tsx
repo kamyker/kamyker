@@ -11,11 +11,13 @@ const projects = [
     featured: true,
   },
   {
-    title: "Verse Open Source Library",
-    description: "The first ever open-sourced GitHub repository of Verse code, featuring persistent player stats, matchmaking systems, and more.",
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&auto=format&fit=crop&q=80",
-    tags: ["Verse", "Open Source", "UEFN"],
-    githubUrl: "https://gist.github.com/kamyker",
+    title: "Reporter Young",
+    description: "An immersive Fortnite experience where players become investigative journalists, uncovering stories and solving mysteries in an interactive newsroom environment.",
+    image: "https://cdn-0001.qstv.on.epicgames.com/dhhrVLXpRImiPtpJKy/image/landscape_comp_s.jpeg",
+    embeddedVideoUrl: "https://a.storyblok.com/f/231265/x/2b2807db47/logadodanerp-1.mp4",
+    tags: ["UEFN", "Fortnite", "Verse"],
+    demoUrl: "https://www.fortnite.com/@fnbl0",
+    featured: true,
   },
   {
     title: "Fortnite API Digest",
