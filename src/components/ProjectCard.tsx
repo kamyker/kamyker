@@ -1,6 +1,12 @@
 import { ExternalLink, Github, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+interface AwardBadge {
+  image: string;
+  alt: string;
+  url: string;
+}
+
 interface ProjectCardProps {
   title: string;
   description: string;
@@ -11,6 +17,7 @@ interface ProjectCardProps {
   videoUrl?: string;
   embeddedVideoUrl?: string;
   featured?: boolean;
+  awardBadge?: AwardBadge;
 }
 
 const ProjectCard = ({ 
@@ -22,7 +29,8 @@ const ProjectCard = ({
   githubUrl, 
   videoUrl,
   embeddedVideoUrl,
-  featured = false 
+  featured = false,
+  awardBadge
 }: ProjectCardProps) => {
   return (
     <div className={`group relative rounded-xl overflow-hidden border border-border/50 bg-gradient-card transition-all duration-500 hover:border-primary/50 hover:shadow-neon ${featured ? 'md:col-span-2' : ''}`}>
@@ -45,6 +53,22 @@ const ProjectCard = ({
           />
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent pointer-events-none" />
+        
+        {/* Award Badge */}
+        {awardBadge && (
+          <a 
+            href={awardBadge.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute top-3 right-3 z-10 hover:scale-105 transition-transform"
+          >
+            <img 
+              src={awardBadge.image} 
+              alt={awardBadge.alt} 
+              className="h-10 md:h-12 w-auto drop-shadow-lg"
+            />
+          </a>
+        )}
         
         {/* Play button overlay */}
         {videoUrl && (
