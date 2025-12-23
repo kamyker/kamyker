@@ -66,7 +66,7 @@ const ProjectCard = ({
         <h3 className="font-display text-xl font-bold text-foreground mb-2 group-hover:text-gradient transition-all duration-300">
           {title}
         </h3>
-        <p className="text-muted-foreground mb-4">
+        <p className="text-muted-foreground mb-4 whitespace-pre-line">
           {description}
         </p>
 

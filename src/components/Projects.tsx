@@ -21,7 +21,14 @@ const projects = [
   },
   {
     title: "UEFN Map Optimization",
-    description: "Commission to optimize @KubxFN's UEFN map: memory 81k→67k, actor count 13k→10k, project size -40%, fixed Switch crashes, optimized Verse loops. Map hit homebar!",
+    description: `Commission to optimize @KubxFN's UEFN map:
+• Memory: 81k → 67k
+• Actor count: 13k → 10k
+• Project download size: -40%
+• Fixed crashes on Switch
+• Map was locked on Switch - fixed
+• Optimized Verse loops
+Map hit homebar! 🎉`,
     image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&auto=format&fit=crop&q=80",
     tags: ["UEFN", "Optimization", "Commission", "Performance"],
     demoUrl: "https://x.com/kamyker/status/1997449569156890729",
