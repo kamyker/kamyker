@@ -5,6 +5,7 @@ const projects = [
     title: "Money Tycoon",
     description: "First metaverse campaign by a Polish bank (Bank Pekao S.A.). A financial simulator with 90,000+ plays where players build businesses and create their own bank in a massive city.",
     image: "https://cdn-0001.qstv.on.epicgames.com/dhhrVLXpRImiPtpJKy/image/landscape_comp_s.jpeg",
+    embeddedVideoUrl: "https://a.storyblok.com/f/231265/x/a08cc525c4/wejdz-do-swiata-fortnite-z-zubrem.mp4",
     tags: ["UEFN", "Fortnite", "Verse", "Bank Pekao S.A."],
     demoUrl: "https://www.fortnite.com/@fnbl0/8754-6289-4338",
     featured: true,

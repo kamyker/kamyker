@@ -9,6 +9,7 @@ interface ProjectCardProps {
   demoUrl?: string;
   githubUrl?: string;
   videoUrl?: string;
+  embeddedVideoUrl?: string;
   featured?: boolean;
 }
 
@@ -20,18 +21,30 @@ const ProjectCard = ({
   demoUrl, 
   githubUrl, 
   videoUrl,
+  embeddedVideoUrl,
   featured = false 
 }: ProjectCardProps) => {
   return (
     <div className={`group relative rounded-xl overflow-hidden border border-border/50 bg-gradient-card transition-all duration-500 hover:border-primary/50 hover:shadow-neon ${featured ? 'md:col-span-2' : ''}`}>
-      {/* Image container */}
+      {/* Video or Image container */}
       <div className="relative aspect-video overflow-hidden">
-        <img 
-          src={image} 
-          alt={title}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
+        {embeddedVideoUrl ? (
+          <video 
+            src={embeddedVideoUrl}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <img 
+            src={image} 
+            alt={title}
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent pointer-events-none" />
         
         {/* Play button overlay */}
         {videoUrl && (
