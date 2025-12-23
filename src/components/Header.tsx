@@ -1,4 +1,4 @@
-import { Github, Twitter, Youtube } from "lucide-react";
+import { Mail, MessageCircle, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
@@ -31,20 +31,18 @@ const Header = () => {
             <Twitter className="w-5 h-5" />
           </a>
           <a 
-            href="https://github.com/kamyker" 
-            target="_blank" 
-            rel="noopener noreferrer"
+            href="mailto:kamil.szurant@gmail.com"
             className="text-muted-foreground hover:text-primary transition-colors"
           >
-            <Github className="w-5 h-5" />
+            <Mail className="w-5 h-5" />
           </a>
           <a 
-            href="https://www.youtube.com/c/BeatAim" 
+            href="https://discord.com/users/126776984968626176" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-primary transition-colors"
           >
-            <Youtube className="w-5 h-5" />
+            <MessageCircle className="w-5 h-5" />
           </a>
         </div>
       </div>
