@@ -1,4 +1,5 @@
 import ProjectCard from "./ProjectCard";
+import drumAwardsBanner from "@/assets/drum-awards-banner.png";
 
 const projects = [
   {
@@ -9,6 +10,11 @@ const projects = [
     tags: ["UEFN", "Fortnite", "Verse", "Bank Pekao S.A.", "Award Winner"],
     demoUrl: "https://www.fortnite.com/@fnbl0/8754-6289-4338",
     featured: true,
+    awardBadge: {
+      image: drumAwardsBanner,
+      alt: "The Drum Awards - Marketing EMEA 2025 Bronze Winner",
+      url: "https://www.thedrummarketingawards.com/emea/en/page/results#/dma-emea/2025/metaverse/how-bank-pekao-s-a-became-sigma"
+    }
   },
   {
     title: "Reporter Young",

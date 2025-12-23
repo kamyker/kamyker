@@ -1,6 +1,5 @@
-import { ArrowDown, Code2, Gamepad2, Trophy } from "lucide-react";
+import { ArrowDown, Code2, Gamepad2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import drumAwardsBanner from "@/assets/drum-awards-banner.png";
 
 const Hero = () => {
   return (
@@ -11,19 +10,6 @@ const Hero = () => {
       
       <div className="container mx-auto px-6 pt-20 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Award Badge */}
-          <a 
-            href="https://www.thedrummarketingawards.com/emea/en/page/results#/dma-emea/2025/metaverse/how-bank-pekao-s-a-became-sigma" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-block mb-6 animate-fade-in hover:scale-105 transition-transform"
-          >
-            <img 
-              src={drumAwardsBanner} 
-              alt="The Drum Awards - Marketing EMEA 2025 Bronze Winner" 
-              className="h-12 md:h-14 w-auto"
-            />
-          </a>
 
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 text-primary mb-8 animate-fade-in">
