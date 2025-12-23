@@ -4,15 +4,16 @@ import { Button } from "@/components/ui/button";
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden grid-pattern">
-      {/* Gradient orbs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px] animate-pulse-glow" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/20 rounded-full blur-[100px] animate-pulse-glow" style={{ animationDelay: '1s' }} />
+      {/* Gradient orbs - more vibrant */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/30 rounded-full blur-[120px] animate-pulse-glow" />
+      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/30 rounded-full blur-[100px] animate-pulse-glow" style={{ animationDelay: '1s' }} />
+      <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-primary/20 rounded-full blur-[80px] animate-pulse-glow" style={{ animationDelay: '0.5s' }} />
       
       <div className="container mx-auto px-6 pt-20 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
 
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 text-primary mb-8 animate-fade-in">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/50 bg-primary/10 text-primary mb-8 animate-fade-in shadow-neon">
             <Gamepad2 className="w-4 h-4" />
             <span className="text-sm font-display uppercase tracking-wider">Game Programmer</span>
           </div>

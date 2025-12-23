@@ -42,10 +42,14 @@ const skills = [
 const Skills = () => {
   return (
     <section id="skills" className="py-24 relative grid-pattern">
+      {/* Background glow effects */}
+      <div className="absolute top-0 left-1/4 w-72 h-72 bg-secondary/20 rounded-full blur-[100px]" />
+      <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-primary/20 rounded-full blur-[100px]" />
+      
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-gradient">Technical</span> Skills
+            <span className="text-gradient-blue glow-text-blue">Technical</span> Skills
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Bridging high-level abstraction with low-level control
@@ -60,10 +64,10 @@ const Skills = () => {
             return (
               <div 
                 key={skill.title}
-                className="group p-6 rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/50 hover:shadow-neon transition-all duration-500"
+                className={`group p-6 rounded-xl border bg-card/50 backdrop-blur-sm transition-all duration-500 ${isPrimary ? 'border-primary/30 hover:border-primary/60 hover:shadow-neon' : 'border-secondary/30 hover:border-secondary/60 hover:shadow-blue'}`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110 ${isPrimary ? 'bg-primary/10 text-primary' : 'bg-secondary/10 text-secondary'}`}>
+                <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110 ${isPrimary ? 'bg-primary/20 text-primary shadow-neon' : 'bg-secondary/20 text-secondary shadow-blue'}`}>
                   <Icon className="w-6 h-6" />
                 </div>
                 <h3 className="font-display text-lg font-bold text-foreground mb-2">

@@ -1,13 +1,13 @@
 const Footer = () => {
   return (
-    <footer className="py-8 border-t border-border/50">
+    <footer className="py-8 border-t border-primary/20 bg-gradient-to-t from-primary/5 to-transparent">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} Kamyker. All rights reserved.
+            © {new Date().getFullYear()} <span className="text-primary">Kamyker</span>. All rights reserved.
           </p>
           <p className="text-muted-foreground text-sm">
-            Game Programmer • UEFN Developer • Verse Pioneer
+            <span className="text-primary">Game Programmer</span> • <span className="text-secondary">UEFN Developer</span> • Verse Pioneer
           </p>
         </div>
       </div>
