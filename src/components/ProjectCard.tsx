@@ -88,7 +88,7 @@ const ProjectCard = ({
             <Button variant="outline" size="sm" asChild>
               <a href={demoUrl} target="_blank" rel="noopener noreferrer">
                 <ExternalLink className="w-4 h-4" />
-                Demo
+                Link
               </a>
             </Button>
           )}
