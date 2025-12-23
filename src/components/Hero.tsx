@@ -28,8 +28,10 @@ const Hero = () => {
           </p>
           
           <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto animate-slide-up leading-relaxed" style={{ animationDelay: '0.2s' }}>
-            Creating immersive <span className="text-primary">UEFN experiences</span> with Verse programming. 
-            Creator of <span className="text-secondary">Money Tycoon</span> for Bank Pekao S.A. and pioneer of open-source Verse code.
+            Creating <span className="text-primary">UEFN experiences</span> since March 2023. Specializing in tycoon maps like{' '}
+            <a href="https://fortnite.gg/island?code=9441-8610-2332" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Drip Shop Tycoon</a> and{' '}
+            <a href="https://fortnite.gg/island?code=7112-2463-4380" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Lumber Town</a>. 
+            Deep Verse and assets knowledge to <span className="text-primary">optimize map FPS</span>.
           </p>
 
           {/* CTA Buttons */}
