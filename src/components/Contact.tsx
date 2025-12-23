@@ -1,5 +1,6 @@
-import { Github, Mail, MapPin, MessageCircle, Twitter } from "lucide-react";
+import { Github, Mail, MapPin, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import DiscordIcon from "@/components/icons/DiscordIcon";
 
 const Contact = () => {
   return (
@@ -37,7 +38,7 @@ const Contact = () => {
             </Button>
             <Button variant="outline" size="lg" asChild>
               <a href="https://discord.com/users/126776984968626176" target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="w-5 h-5" />
+                <DiscordIcon className="w-5 h-5" />
                 Discord
               </a>
             </Button>
