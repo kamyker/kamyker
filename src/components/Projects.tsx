@@ -40,13 +40,6 @@ Map hit homebar! 🎉`,
     demoUrl: "https://x.com/kamyker/status/1997449569156890729",
   },
   {
-    title: "UEFN Creative Maps",
-    description: "Collection of creative UEFN maps showcasing innovative gameplay mechanics and Verse programming techniques.",
-    image: "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=800&auto=format&fit=crop&q=80",
-    tags: ["UEFN", "Fortnite", "Verse"],
-    demoUrl: "https://x.com/kamyker",
-  },
-  {
     title: "Beat Aim",
     description: "An innovative aim trainer where targets are generated based on music rhythm. A Unity/C# game available on Steam.",
     image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&auto=format&fit=crop&q=80",
