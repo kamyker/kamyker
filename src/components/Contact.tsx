@@ -6,11 +6,14 @@ const Contact = () => {
   return (
     <section id="contact" className="py-24 relative">
       <div className="absolute inset-0 bg-gradient-to-t from-background via-muted/10 to-background" />
+      {/* Background glow effects */}
+      <div className="absolute top-1/2 left-1/4 w-80 h-80 bg-primary/20 rounded-full blur-[120px]" />
+      <div className="absolute top-1/2 right-1/4 w-80 h-80 bg-secondary/20 rounded-full blur-[120px]" />
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
-            Let's <span className="text-gradient">Connect</span>
+            Let's <span className="text-gradient-orange glow-text">Connect</span>
           </h2>
           <p className="text-muted-foreground text-lg mb-8">
             Interested in collaboration or have a project in mind? Let's talk!
@@ -18,7 +21,7 @@ const Contact = () => {
 
           {/* Location */}
           <div className="flex items-center justify-center gap-2 text-muted-foreground mb-10">
-            <MapPin className="w-5 h-5 text-primary" />
+            <MapPin className="w-5 h-5 text-secondary" />
             <span>Wrocław, Poland</span>
           </div>
 

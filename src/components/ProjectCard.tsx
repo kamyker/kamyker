@@ -33,7 +33,7 @@ const ProjectCard = ({
   awardBadge
 }: ProjectCardProps) => {
   return (
-    <div className={`group relative rounded-xl overflow-hidden border border-border/50 bg-gradient-card transition-all duration-500 hover:border-primary/50 hover:shadow-neon ${featured ? 'md:col-span-2' : ''}`}>
+    <div className={`group relative rounded-xl overflow-hidden border border-secondary/30 bg-gradient-card transition-all duration-500 hover:border-primary/60 hover:shadow-neon ${featured ? 'md:col-span-2' : ''}`}>
       {/* Video or Image container */}
       <div className="relative aspect-video overflow-hidden">
         {embeddedVideoUrl ? (
@@ -96,10 +96,14 @@ const ProjectCard = ({
 
         {/* Tags */}
         <div className="flex flex-wrap gap-2 mb-4">
-          {tags.map((tag) => (
+          {tags.map((tag, index) => (
             <span 
               key={tag}
-              className="px-3 py-1 text-xs font-display uppercase tracking-wider rounded-full bg-muted text-muted-foreground border border-border"
+              className={`px-3 py-1 text-xs font-display uppercase tracking-wider rounded-full border ${
+                index % 2 === 0 
+                  ? 'bg-primary/10 text-primary border-primary/30' 
+                  : 'bg-secondary/10 text-secondary border-secondary/30'
+              }`}
             >
               {tag}
             </span>

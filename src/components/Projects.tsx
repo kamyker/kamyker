@@ -60,11 +60,14 @@ const Projects = () => {
   return (
     <section id="projects" className="py-24 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/10 to-background" />
+      {/* Background glow effects */}
+      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary/15 rounded-full blur-[150px]" />
+      <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-secondary/15 rounded-full blur-[120px]" />
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-gradient">Featured</span> Projects
+            <span className="text-gradient glow-text">Featured</span> Projects
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             From music-driven aim trainers to pioneering open-source Verse development
