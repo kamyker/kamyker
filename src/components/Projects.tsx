@@ -29,7 +29,7 @@ const projects = [
 • Map was locked on Switch - fixed
 • Optimized Verse loops
 Map hit homebar! 🎉`,
-    image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&auto=format&fit=crop&q=80",
+    image: "/images/uefn-optimization.jpg",
     tags: ["UEFN", "Optimization", "Commission", "Performance"],
     demoUrl: "https://x.com/kamyker/status/1997449569156890729",
   },
