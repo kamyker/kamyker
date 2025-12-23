@@ -2,12 +2,11 @@ import ProjectCard from "./ProjectCard";
 
 const projects = [
   {
-    title: "Beat Aim",
-    description: "An innovative aim trainer where targets are generated based on music rhythm. Available on Steam and as a UEFN experience.",
-    image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&auto=format&fit=crop&q=80",
-    tags: ["UEFN", "Steam", "Music", "Aim Trainer"],
-    demoUrl: "https://beataim.com",
-    videoUrl: "https://www.youtube.com/c/BeatAim",
+    title: "Money Tycoon",
+    description: "First metaverse campaign by a Polish bank (Bank Pekao S.A.). A financial simulator with 90,000+ plays where players build businesses and create their own bank in a massive city.",
+    image: "https://cdn-0001.qstv.on.epicgames.com/dhhrVLXpRImiPtpJKy/image/landscape_comp_s.jpeg",
+    tags: ["UEFN", "Fortnite", "Verse", "Bank Pekao S.A."],
+    demoUrl: "https://www.fortnite.com/@fnbl0/8754-6289-4338",
     featured: true,
   },
   {
@@ -30,6 +29,14 @@ const projects = [
     image: "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=800&auto=format&fit=crop&q=80",
     tags: ["UEFN", "Fortnite", "Verse"],
     demoUrl: "https://x.com/kamyker",
+  },
+  {
+    title: "Beat Aim",
+    description: "An innovative aim trainer where targets are generated based on music rhythm. A Unity/C# game available on Steam.",
+    image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&auto=format&fit=crop&q=80",
+    tags: ["Unity", "C#", "Steam", "Music", "Aim Trainer"],
+    demoUrl: "https://beataim.com",
+    videoUrl: "https://www.youtube.com/c/BeatAim",
   },
 ];
 
