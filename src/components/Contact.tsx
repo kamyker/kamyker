@@ -1,4 +1,4 @@
-import { Github, Mail, MapPin, Twitter, Youtube } from "lucide-react";
+import { Github, Mail, MapPin, MessageCircle, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Contact = () => {
@@ -36,16 +36,16 @@ const Contact = () => {
               </a>
             </Button>
             <Button variant="outline" size="lg" asChild>
-              <a href="https://www.youtube.com/c/BeatAim" target="_blank" rel="noopener noreferrer">
-                <Youtube className="w-5 h-5" />
-                YouTube
+              <a href="https://discord.com/users/126776984968626176" target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="w-5 h-5" />
+                Discord
               </a>
             </Button>
           </div>
 
           {/* CTA */}
           <Button variant="neon" size="xl" asChild>
-            <a href="mailto:contact@kamyker.dev">
+            <a href="mailto:kamil.szurant@gmail.com">
               <Mail className="w-5 h-5" />
               Send me a message
             </a>
