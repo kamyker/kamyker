@@ -1,5 +1,6 @@
-import { Mail, MessageCircle, Twitter } from "lucide-react";
+import { Mail, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import DiscordIcon from "@/components/icons/DiscordIcon";
 
 const Header = () => {
   return (
@@ -42,7 +43,7 @@ const Header = () => {
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-primary transition-colors"
           >
-            <MessageCircle className="w-5 h-5" />
+            <DiscordIcon className="w-5 h-5" />
           </a>
         </div>
       </div>
