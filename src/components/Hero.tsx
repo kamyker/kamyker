@@ -29,7 +29,7 @@ const Hero = () => {
           
           <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto animate-slide-up leading-relaxed" style={{ animationDelay: '0.2s' }}>
             Creating immersive <span className="text-primary">UEFN experiences</span> with Verse programming. 
-            Developer of <span className="text-secondary">Beat Aim</span> and pioneer of open-source Verse code.
+            Creator of <span className="text-secondary">Money Tycoon</span> for Bank Pekao S.A. and pioneer of open-source Verse code.
           </p>
 
           {/* CTA Buttons */}
