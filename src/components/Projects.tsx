@@ -32,6 +32,7 @@ const projects = [
     tags: ["Unity", "C#", "Steam", "Music", "Aim Trainer"],
     demoUrl: "https://beataim.com",
     videoUrl: "https://www.youtube.com/c/BeatAim",
+    youtubeVideoId: "_2UX9ymzGzM",
   },
   {
     title: "Neighbor Boss Fight",
