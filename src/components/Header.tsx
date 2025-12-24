@@ -14,6 +14,9 @@ const Header = () => {
           <a href="#projects" className="text-muted-foreground hover:text-primary transition-colors text-sm uppercase tracking-wider font-display">
             Projects
           </a>
+          <a href="#commissions" className="text-muted-foreground hover:text-primary transition-colors text-sm uppercase tracking-wider font-display">
+            Commissions
+          </a>
           <a href="#skills" className="text-muted-foreground hover:text-primary transition-colors text-sm uppercase tracking-wider font-display">
             Skills
           </a>

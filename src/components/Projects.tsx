@@ -78,7 +78,7 @@ const Projects = () => {
       </div>
 
       {/* Past Commissions Section */}
-      <div className="container mx-auto px-6 relative z-10 mt-24">
+      <div id="commissions" className="container mx-auto px-6 relative z-10 mt-24">
         <div className="text-center mb-16">
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
             <span className="text-gradient glow-text">Past</span> Commissions
