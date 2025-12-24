@@ -18,7 +18,7 @@ const projects = [
   },
   {
     title: "Drip Shop Tycoon - Reporter Young",
-    description: "A branded tycoon experience for Reporter Young clothing brand. Players build and manage their own clothing shop, expanding their fashion empire in Fortnite.",
+    description: "A branded tycoon experience for Reporter Young clothing brand with over 700,000 plays. Players build and manage their own clothing shop, expanding their fashion empire in Fortnite.",
     image: "https://cdn-0001.qstv.on.epicgames.com/dhhrVLXpRImiPtpJKy/image/landscape_comp_s.jpeg",
     embeddedVideoUrl: "https://a.storyblok.com/f/231265/x/2b2807db47/logadodanerp-1.mp4",
     tags: ["UEFN", "Fortnite", "Verse", "Reporter Young"],
