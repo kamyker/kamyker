@@ -62,7 +62,7 @@ const ProjectCard = ({
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           />
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-card/60 via-transparent to-transparent pointer-events-none" />
         
         {/* Award Badge */}
         {awardBadge && (
