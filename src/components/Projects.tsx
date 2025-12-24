@@ -74,7 +74,7 @@ const Projects = () => {
             <span className="text-gradient glow-text">Featured</span> Projects
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            From music-driven aim trainers to pioneering open-source Verse development
+            Award-winning brand experiences, boss fight maps, and rhythm-based gaming
           </p>
         </div>
 
