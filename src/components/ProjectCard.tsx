@@ -16,6 +16,7 @@ interface ProjectCardProps {
   githubUrl?: string;
   videoUrl?: string;
   embeddedVideoUrl?: string;
+  youtubeVideoId?: string;
   featured?: boolean;
   awardBadge?: AwardBadge;
 }
@@ -29,6 +30,7 @@ const ProjectCard = ({
   githubUrl, 
   videoUrl,
   embeddedVideoUrl,
+  youtubeVideoId,
   featured = false,
   awardBadge
 }: ProjectCardProps) => {
@@ -36,7 +38,15 @@ const ProjectCard = ({
     <div className={`group relative rounded-xl overflow-hidden border border-secondary/30 bg-gradient-card transition-all duration-500 hover:border-primary/60 hover:shadow-neon ${featured ? 'md:col-span-2' : ''}`}>
       {/* Video or Image container */}
       <div className="relative aspect-video overflow-hidden">
-        {embeddedVideoUrl ? (
+        {youtubeVideoId ? (
+          <iframe
+            src={`https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1&mute=1&loop=1&playlist=${youtubeVideoId}&controls=0&showinfo=0`}
+            title={title}
+            className="w-full h-full object-cover"
+            allow="autoplay; encrypted-media"
+            allowFullScreen
+          />
+        ) : embeddedVideoUrl ? (
           <video 
             src={embeddedVideoUrl}
             autoPlay
