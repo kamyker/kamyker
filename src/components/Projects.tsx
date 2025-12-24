@@ -35,7 +35,7 @@ const projects = [
   },
   {
     title: "Neighbor Boss Fight",
-    description: "A boss fight map where players battle a dragon in a Tokyo city environment.",
+    description: "A boss fight map where players battle a dragon in a Tokyo city environment. Created for [NEIGHBOR_FN](https://x.com/NEIGHBOR_FN).",
     image: "/videos/neighbor-boss-fight.mp4",
     tags: ["UEFN", "Fortnite", "Boss Fight", "Dragon"],
     embeddedVideoUrl: "/videos/neighbor-boss-fight.mp4",

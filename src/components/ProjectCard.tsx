@@ -91,7 +91,23 @@ const ProjectCard = ({
           {title}
         </h3>
         <p className="text-muted-foreground mb-4 whitespace-pre-line">
-          {description}
+          {description.split(/(\[.*?\]\(.*?\))/).map((part, i) => {
+            const linkMatch = part.match(/\[(.*?)\]\((.*?)\)/);
+            if (linkMatch) {
+              return (
+                <a 
+                  key={i}
+                  href={linkMatch[2]} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  {linkMatch[1]}
+                </a>
+              );
+            }
+            return part;
+          })}
         </p>
 
         {/* Tags */}
