@@ -26,6 +26,17 @@ const projects = [
     featured: true,
   },
   {
+    title: "Beat Aim",
+    description: "An innovative aim trainer where targets are generated based on music rhythm. A Unity/C# game available on Steam.",
+    image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&auto=format&fit=crop&q=80",
+    tags: ["Unity", "C#", "Steam", "Music", "Aim Trainer"],
+    demoUrl: "https://beataim.com",
+    videoUrl: "https://www.youtube.com/c/BeatAim",
+  },
+];
+
+const pastCommissions = [
+  {
     title: "UEFN Map Optimization",
     description: `Commission to optimize @KubxFN's UEFN map:
 • Memory: 81k → 67k
@@ -38,14 +49,6 @@ Map hit homebar! 🎉`,
     image: "/images/uefn-optimization.jpg",
     tags: ["UEFN", "Optimization", "Commission", "Performance"],
     demoUrl: "https://x.com/kamyker/status/1997449569156890729",
-  },
-  {
-    title: "Beat Aim",
-    description: "An innovative aim trainer where targets are generated based on music rhythm. A Unity/C# game available on Steam.",
-    image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&auto=format&fit=crop&q=80",
-    tags: ["Unity", "C#", "Steam", "Music", "Aim Trainer"],
-    demoUrl: "https://beataim.com",
-    videoUrl: "https://www.youtube.com/c/BeatAim",
   },
 ];
 
@@ -69,6 +72,24 @@ const Projects = () => {
 
         <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {projects.map((project) => (
+            <ProjectCard key={project.title} {...project} />
+          ))}
+        </div>
+      </div>
+
+      {/* Past Commissions Section */}
+      <div className="container mx-auto px-6 relative z-10 mt-24">
+        <div className="text-center mb-16">
+          <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
+            <span className="text-gradient glow-text">Past</span> Commissions
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Professional optimization and development work for clients
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          {pastCommissions.map((project) => (
             <ProjectCard key={project.title} {...project} />
           ))}
         </div>
