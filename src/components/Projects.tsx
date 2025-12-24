@@ -33,6 +33,13 @@ const projects = [
     demoUrl: "https://beataim.com",
     videoUrl: "https://www.youtube.com/c/BeatAim",
   },
+  {
+    title: "Neighbor Boss Fight",
+    description: "A boss fight map where players battle a dragon in a Tokyo city environment.",
+    image: "/videos/neighbor-boss-fight.mp4",
+    tags: ["UEFN", "Fortnite", "Boss Fight", "Dragon"],
+    embeddedVideoUrl: "/videos/neighbor-boss-fight.mp4",
+  },
 ];
 
 const pastCommissions = [
