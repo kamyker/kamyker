@@ -3,7 +3,7 @@ import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
-import ScheduleCommission from "@/components/ScheduleCommission";
+// import ScheduleCommission from "@/components/ScheduleCommission";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -15,7 +15,7 @@ const Index = () => {
         <Projects />
         <Skills />
         <Contact />
-        <ScheduleCommission />
+        {/* <ScheduleCommission /> */}
       </main>
       <Footer />
     </div>
