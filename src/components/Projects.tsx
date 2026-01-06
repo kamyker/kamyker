@@ -49,6 +49,15 @@ Map hit homebar after optimizations! 🎉`,
   image: "/images/uefn-optimization.jpg",
   tags: ["UEFN", "Optimization", "Commission", "Performance"],
   demoUrl: "https://x.com/kamyker/status/1997449569156890729"
+}, {
+  title: "Secret RvB for ChitaZ",
+  description: `Commission to optimize @ChitaZ's UEFN map:
+• Download size: 53mb → 47mb
+• Memory: 88k → 71k
+• Fixed memory leaks in 4 Verse scripts
+• Optimized main floor rendering`,
+  image: "/images/uefn-optimization.jpg",
+  tags: ["UEFN", "Optimization", "Commission", "Performance"]
 }];
 const Projects = () => {
   return <section id="projects" className="py-24 relative">
