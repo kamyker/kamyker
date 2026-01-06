@@ -13,8 +13,7 @@ const Pricing = () => {
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             I charge <span className="text-foreground font-semibold">$50/hour</span> for all optimization and development work.
-            <br />
-            <span className="text-sm">Upfront payment may be required for new clients.</span>
+            Upfront payment may be required for new clients.
           </p>
         </div>
 
