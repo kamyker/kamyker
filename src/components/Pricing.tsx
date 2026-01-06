@@ -13,7 +13,7 @@ const Pricing = () => {
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             I charge <span className="text-foreground font-semibold">$50/hour</span> for all optimization and development work.
-            Upfront payment may be required for new clients.
+            Upfront payment may be required for new clients. I usually don't make quotes by trying to guess how much a task will take—it takes too much time.
           </p>
         </div>
 
@@ -110,6 +110,10 @@ const Pricing = () => {
               <li className="flex items-start gap-3">
                 <Check className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
                 <span className="text-muted-foreground">Basic materials and niagara VFXs creation</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Check className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                <span className="text-muted-foreground">Min 5h commitment</span>
               </li>
             </ul>
           </div>
