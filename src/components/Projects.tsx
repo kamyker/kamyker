@@ -37,7 +37,7 @@ const projects = [{
   embeddedVideoUrl: "/videos/neighbor-boss-fight.mp4"
 }];
 const pastCommissions = [{
-  title: "UEFN Map Optimization",
+  title: "KubxFN's Mega Optimization",
   description: `Commission to optimize @KubxFN's UEFN map:
 • Memory: 81k → 67k
 • Actor count: 13k → 10k
@@ -45,7 +45,7 @@ const pastCommissions = [{
 • Fixed crashes on Switch
 • Map was locked on Switch - fixed
 • Optimized Verse loops
-Map hit homebar! 🎉`,
+Map hit homebar after optimizations! 🎉`,
   image: "/images/uefn-optimization.jpg",
   tags: ["UEFN", "Optimization", "Commission", "Performance"],
   demoUrl: "https://x.com/kamyker/status/1997449569156890729"
