@@ -17,7 +17,7 @@ const Pricing = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           <div className="glass-card rounded-2xl p-8 border border-primary/20 hover:border-primary/40 transition-all duration-300">
             <div className="text-center mb-6">
               <h3 className="font-display text-2xl font-bold text-foreground mb-2">
@@ -79,6 +79,37 @@ const Pricing = () => {
               <li className="flex items-start gap-3">
                 <Check className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
                 <span className="text-muted-foreground">Many other tricks I found over the years</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="glass-card rounded-2xl p-8 border border-accent/20 hover:border-accent/40 transition-all duration-300">
+            <div className="text-center mb-6">
+              <h3 className="font-display text-2xl font-bold text-foreground mb-2">
+                Other
+              </h3>
+              <div className="flex items-baseline justify-center gap-1">
+                <span className="text-4xl font-bold text-gradient">$50</span>
+                <span className="text-muted-foreground">/ hour</span>
+              </div>
+            </div>
+            
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3">
+                <Check className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                <span className="text-muted-foreground">Verse systems and mechanics</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Check className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                <span className="text-muted-foreground">Game loop improvements to increase playtime</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Check className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                <span className="text-muted-foreground">Advanced UI implementations</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Check className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                <span className="text-muted-foreground">Basic materials and niagara VFXs creation</span>
               </li>
             </ul>
           </div>
