@@ -17,7 +17,7 @@ const Pricing = () => {
           </p>
         </div>
 
-        <div className="max-w-md mx-auto">
+        <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
           <div className="glass-card rounded-2xl p-8 border border-primary/20 hover:border-primary/40 transition-all duration-300">
             <div className="text-center mb-6">
               <h3 className="font-display text-2xl font-bold text-foreground mb-2">
@@ -45,6 +45,32 @@ const Pricing = () => {
               <li className="flex items-start gap-3">
                 <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                 <span className="text-muted-foreground">Info on further optimization possibilities</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="glass-card rounded-2xl p-8 border border-secondary/20 hover:border-secondary/40 transition-all duration-300">
+            <div className="text-center mb-6">
+              <h3 className="font-display text-2xl font-bold text-foreground mb-2">
+                Better Optimization
+              </h3>
+              <div className="flex items-baseline justify-center gap-1">
+                <span className="text-4xl font-bold text-gradient-orange">$500-1000+</span>
+              </div>
+            </div>
+            
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3">
+                <Check className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
+                <span className="text-muted-foreground">Replacing assets with optimized solutions</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Check className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
+                <span className="text-muted-foreground">Rewriting slow parts of Verse code</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Check className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
+                <span className="text-muted-foreground">Improvements to materials and Niagara VFXs</span>
               </li>
             </ul>
           </div>
