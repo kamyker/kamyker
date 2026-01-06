@@ -41,6 +41,10 @@ const Pricing = () => {
                 <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                 <span className="text-muted-foreground">Verse memory leaks fixes</span>
               </li>
+              <li className="flex items-start gap-3">
+                <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                <span className="text-muted-foreground">Report on further optimization possibilities</span>
+              </li>
             </ul>
           </div>
         </div>
