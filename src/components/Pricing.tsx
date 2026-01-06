@@ -9,8 +9,8 @@ const Pricing = () => {
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
             <span className="text-gradient glow-text">Pricing</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">I work at an hourly rate of $50/hour. Creating accurate quotes takes significant time, so I prefer to bill for actual hours worked. Upfront payment may be required for new and unfamiliar clients.<span className="text-foreground font-semibold">$50/hour</span>. 
-            Creating accurate quotes takes significant time, so I prefer to bill for actual hours worked. Upfront payment may be required for new clients.
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            I work at an hourly rate of <span className="text-foreground font-semibold">$50/hour</span>. Creating accurate quotes takes significant time, so I prefer to bill for actual hours worked. Upfront payment may be required for new clients.
           </p>
         </div>
 
