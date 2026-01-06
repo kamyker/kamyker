@@ -6,8 +6,10 @@ import Pricing from "@/components/Pricing";
 import Contact from "@/components/Contact";
 // import ScheduleCommission from "@/components/ScheduleCommission";
 import Footer from "@/components/Footer";
+import { useScrollToHash } from "@/hooks/useScrollToHash";
 
 const Index = () => {
+  useScrollToHash();
   return (
     <div className="min-h-screen bg-background">
       <Header />
