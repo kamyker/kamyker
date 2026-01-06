@@ -12,8 +12,8 @@ const Pricing = () => {
             <span className="text-gradient glow-text">Pricing</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            I charge <span className="text-foreground font-semibold">$50/hour</span> for all optimization and development work.
-            Upfront payment may be required for new clients. I usually don't make quotes by trying to guess how much a task will take—it takes too much time.
+            All services are billed at <span className="text-foreground font-semibold">$50/hour</span>. 
+            I work on a time-and-materials basis rather than fixed quotes—this ensures you only pay for actual work delivered, not estimates. Upfront payment may be required for new clients.
           </p>
         </div>
 
