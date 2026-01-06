@@ -12,8 +12,8 @@ const Pricing = () => {
             <span className="text-gradient glow-text">Pricing</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            All services are billed at <span className="text-foreground font-semibold">$50/hour</span>. 
-            I work on a time-and-materials basis rather than fixed quotes—this ensures you only pay for actual work delivered, not estimates. Upfront payment may be required for new clients.
+            I work with an hourly rate of <span className="text-foreground font-semibold">$50/hour</span>. 
+            Creating accurate quotes takes significant time, so I prefer billing for actual hours worked. Upfront payment may be required for new clients.
           </p>
         </div>
 
