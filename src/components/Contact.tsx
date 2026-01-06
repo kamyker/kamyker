@@ -28,9 +28,9 @@ const Contact = () => {
           {/* Social Links */}
           <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
             <Button variant="outline" size="lg" asChild>
-              <a href="https://x.com/kamyker" target="_blank" rel="noopener noreferrer">
-                <Twitter className="w-5 h-5" />
-                Twitter
+              <a href="mailto:kamil.szurant@gmail.com">
+                <Mail className="w-5 h-5" />
+                Email
               </a>
             </Button>
             <Button variant="outline" size="lg" asChild>
@@ -49,8 +49,8 @@ const Contact = () => {
 
           {/* CTA */}
           <Button variant="neon" size="xl" asChild>
-            <a href="mailto:kamil.szurant@gmail.com">
-              <Mail className="w-5 h-5" />
+            <a href="https://x.com/kamyker" target="_blank" rel="noopener noreferrer">
+              <Twitter className="w-5 h-5" />
               Send me a message
             </a>
           </Button>
