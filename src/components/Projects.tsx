@@ -1,5 +1,6 @@
 import ProjectCard from "./ProjectCard";
 import drumAwardsBanner from "@/assets/drum-awards-banner.png";
+import secretRvbLobby from "@/assets/secret-rvb-lobby.jpeg";
 const projects = [{
   title: "Money Tycoon",
   description: "🏆 Bronze Winner - The Drum Marketing Awards EMEA 2025 (Metaverse). First metaverse campaign by a Polish bank (Bank Pekao S.A.). A financial simulator with 90,000+ plays where players build businesses and create their own bank.",
@@ -56,7 +57,7 @@ Map hit homebar after optimizations! 🎉`,
 • Memory: 88k → 71k
 • Fixed memory leaks in 4 Verse scripts
 • Optimized main floor rendering`,
-  image: "/images/uefn-optimization.jpg",
+  image: secretRvbLobby,
   tags: ["UEFN", "Optimization", "Commission", "Performance"]
 }];
 const Projects = () => {
