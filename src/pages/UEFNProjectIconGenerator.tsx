@@ -65,7 +65,7 @@ const UEFNProjectIconGenerator = () => {
         const text = overlayText.trim();
 
         // Find optimal font size
-        let fontSize = size * 0.3;
+        let fontSize = size * 0.5;
         ctx.font = `bold ${fontSize}px sans-serif`;
 
         // Word wrap function
