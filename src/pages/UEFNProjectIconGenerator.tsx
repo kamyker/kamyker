@@ -107,13 +107,30 @@ const UEFNProjectIconGenerator = () => {
           lines = wrapText(text, maxWidth);
         }
 
-        // Draw text
+        // Draw text with stroke for better visibility
         const lineHeight = fontSize * 1.2;
         const totalHeight = lines.length * lineHeight;
         const startY = (size - totalHeight) / 2 + lineHeight / 2;
 
+        // Configure stroke for outline effect
+        ctx.strokeStyle = "rgba(0, 0, 0, 0.9)";
+        ctx.lineWidth = fontSize * 0.08;
+        ctx.lineJoin = "round";
+        ctx.miterLimit = 2;
+
         lines.forEach((line, index) => {
-          ctx.fillText(line, size / 2, startY + index * lineHeight);
+          const y = startY + index * lineHeight;
+          // Draw shadow
+          ctx.shadowColor = "rgba(0, 0, 0, 0.8)";
+          ctx.shadowBlur = fontSize * 0.15;
+          ctx.shadowOffsetX = 0;
+          ctx.shadowOffsetY = fontSize * 0.05;
+          // Draw stroke (outline)
+          ctx.strokeText(line, size / 2, y);
+          // Reset shadow for fill
+          ctx.shadowColor = "transparent";
+          // Draw fill
+          ctx.fillText(line, size / 2, y);
         });
       }
 
