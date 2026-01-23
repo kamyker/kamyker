@@ -1,14 +1,25 @@
 import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
 import { Download } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+const fontOptions = [
+  { value: "sans-serif", label: "Sans Serif" },
+  { value: "serif", label: "Serif" },
+  { value: "monospace", label: "Monospace" },
+  { value: "cursive", label: "Cursive" },
+  { value: "fantasy", label: "Fantasy" },
+];
+
 const UEFNProjectIconGenerator = () => {
   const [imageUrl, setImageUrl] = useState("");
   const [overlayText, setOverlayText] = useState("");
+  const [fontSize, setFontSize] = useState(50);
+  const [fontFamily, setFontFamily] = useState("sans-serif");
   const [generatedImage, setGeneratedImage] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -69,9 +80,9 @@ const UEFNProjectIconGenerator = () => {
         const maxWidth = outputSize - padding * 2;
         const text = overlayText.trim();
 
-        // Find optimal font size
-        let fontSize = outputSize * 0.5;
-        ctx.font = `bold ${fontSize}px sans-serif`;
+        // Use user-specified font size (percentage of output size)
+        let currentFontSize = outputSize * (fontSize / 100);
+        ctx.font = `bold ${currentFontSize}px ${fontFamily}`;
 
         // Word wrap function
         const wrapText = (text: string, maxWidth: number): string[] => {
@@ -95,31 +106,31 @@ const UEFNProjectIconGenerator = () => {
           return lines;
         };
 
-        // Adjust font size to fit
+        // Adjust font size to fit if needed
         let lines = wrapText(text, maxWidth);
         const maxLines = 4;
         
-        while (lines.length > maxLines && fontSize > 20) {
-          fontSize *= 0.9;
-          ctx.font = `bold ${fontSize}px sans-serif`;
+        while (lines.length > maxLines && currentFontSize > 10) {
+          currentFontSize *= 0.9;
+          ctx.font = `bold ${currentFontSize}px ${fontFamily}`;
           lines = wrapText(text, maxWidth);
         }
 
         // If still too many lines, reduce font size more
-        while (lines.some(line => ctx.measureText(line).width > maxWidth) && fontSize > 20) {
-          fontSize *= 0.9;
-          ctx.font = `bold ${fontSize}px sans-serif`;
+        while (lines.some(line => ctx.measureText(line).width > maxWidth) && currentFontSize > 10) {
+          currentFontSize *= 0.9;
+          ctx.font = `bold ${currentFontSize}px ${fontFamily}`;
           lines = wrapText(text, maxWidth);
         }
 
         // Draw text with stroke for better visibility
-        const lineHeight = fontSize * 1.2;
+        const lineHeight = currentFontSize * 1.2;
         const totalHeight = lines.length * lineHeight;
         const startY = (outputSize - totalHeight) / 2 + lineHeight / 2;
 
         // Configure stroke for outline effect
         ctx.strokeStyle = "rgba(0, 0, 0, 0.9)";
-        ctx.lineWidth = fontSize * 0.08;
+        ctx.lineWidth = currentFontSize * 0.08;
         ctx.lineJoin = "round";
         ctx.miterLimit = 2;
 
@@ -127,9 +138,9 @@ const UEFNProjectIconGenerator = () => {
           const y = startY + index * lineHeight;
           // Draw shadow
           ctx.shadowColor = "rgba(0, 0, 0, 0.8)";
-          ctx.shadowBlur = fontSize * 0.15;
+          ctx.shadowBlur = currentFontSize * 0.15;
           ctx.shadowOffsetX = 0;
-          ctx.shadowOffsetY = fontSize * 0.05;
+          ctx.shadowOffsetY = currentFontSize * 0.05;
           // Draw stroke (outline)
           ctx.strokeText(line, outputSize / 2, y);
           // Reset shadow for fill
@@ -192,6 +203,37 @@ const UEFNProjectIconGenerator = () => {
                 onChange={(e) => setOverlayText(e.target.value)}
                 className="bg-background/50"
               />
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="fontSize">Font Size (%)</Label>
+                <Input
+                  id="fontSize"
+                  type="number"
+                  min={10}
+                  max={100}
+                  value={fontSize}
+                  onChange={(e) => setFontSize(Math.min(100, Math.max(10, Number(e.target.value))))}
+                  className="bg-background/50"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="fontFamily">Font Type</Label>
+                <Select value={fontFamily} onValueChange={setFontFamily}>
+                  <SelectTrigger className="bg-background/50">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent className="bg-background border border-primary/20">
+                    {fontOptions.map((font) => (
+                      <SelectItem key={font.value} value={font.value}>
+                        {font.label}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
             </div>
 
             {error && (
