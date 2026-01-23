@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -7,36 +7,62 @@ import { Download } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+// Load Google Fonts
+const googleFonts = [
+  "Bebas+Neue",
+  "Oswald:wght@700",
+  "Roboto+Condensed:wght@700",
+  "Anton",
+  "Teko:wght@700",
+  "Russo+One",
+  "Staatliches",
+  "Bungee",
+  "Bangers",
+  "Permanent+Marker",
+];
+
+const loadGoogleFonts = () => {
+  const link = document.createElement("link");
+  link.href = `https://fonts.googleapis.com/css2?family=${googleFonts.join("&family=")}&display=swap`;
+  link.rel = "stylesheet";
+  document.head.appendChild(link);
+};
+
 const fontOptions = [
-  { value: "'Burbank Big Condensed', 'Impact', sans-serif", label: "Burbank (Fortnite)" },
-  { value: "Impact, sans-serif", label: "Impact" },
-  { value: "'Arial Black', sans-serif", label: "Arial Black" },
-  { value: "'Bebas Neue', sans-serif", label: "Bebas Neue" },
-  { value: "'Oswald', sans-serif", label: "Oswald" },
-  { value: "'Roboto Condensed', sans-serif", label: "Roboto Condensed" },
-  { value: "'Anton', sans-serif", label: "Anton" },
-  { value: "'Teko', sans-serif", label: "Teko" },
-  { value: "'Russo One', sans-serif", label: "Russo One" },
-  { value: "'Staatliches', sans-serif", label: "Staatliches" },
-  { value: "'Bungee', sans-serif", label: "Bungee" },
-  { value: "'Bangers', sans-serif", label: "Bangers" },
-  { value: "'Permanent Marker', cursive", label: "Permanent Marker" },
+  { value: "'Burbank Big Condensed', Arial, sans-serif", label: "Burbank (Fortnite)" },
+  { value: "Impact, Arial, sans-serif", label: "Impact" },
+  { value: "'Arial Black', Arial, sans-serif", label: "Arial Black" },
+  { value: "'Bebas Neue', Arial, sans-serif", label: "Bebas Neue" },
+  { value: "'Oswald', Arial, sans-serif", label: "Oswald" },
+  { value: "'Roboto Condensed', Arial, sans-serif", label: "Roboto Condensed" },
+  { value: "'Anton', Arial, sans-serif", label: "Anton" },
+  { value: "'Teko', Arial, sans-serif", label: "Teko" },
+  { value: "'Russo One', Arial, sans-serif", label: "Russo One" },
+  { value: "'Staatliches', Arial, sans-serif", label: "Staatliches" },
+  { value: "'Bungee', Arial, sans-serif", label: "Bungee" },
+  { value: "'Bangers', Arial, sans-serif", label: "Bangers" },
+  { value: "'Permanent Marker', Arial, sans-serif", label: "Permanent Marker" },
+  { value: "Arial, sans-serif", label: "Arial" },
   { value: "sans-serif", label: "Sans Serif" },
   { value: "serif", label: "Serif" },
   { value: "monospace", label: "Monospace" },
   { value: "cursive", label: "Cursive" },
-  { value: "fantasy", label: "Fantasy" },
 ];
 
 const UEFNProjectIconGenerator = () => {
   const [imageUrl, setImageUrl] = useState("");
   const [overlayText, setOverlayText] = useState("");
   const [fontSize, setFontSize] = useState(50);
-  const [fontFamily, setFontFamily] = useState("'Burbank Big Condensed', 'Impact', sans-serif");
+  const [fontFamily, setFontFamily] = useState("'Burbank Big Condensed', Arial, sans-serif");
   const [generatedImage, setGeneratedImage] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  // Load Google Fonts on mount
+  useEffect(() => {
+    loadGoogleFonts();
+  }, []);
 
   const createIcon = async () => {
     if (!imageUrl.trim()) {
