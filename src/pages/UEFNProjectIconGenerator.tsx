@@ -37,35 +37,40 @@ const UEFNProjectIconGenerator = () => {
       const canvas = canvasRef.current;
       if (!canvas) return;
 
-      const size = Math.min(img.width, img.height);
-      canvas.width = size;
-      canvas.height = size;
+      const outputSize = 192;
+      canvas.width = outputSize;
+      canvas.height = outputSize;
 
       const ctx = canvas.getContext("2d");
       if (!ctx) return;
 
-      // Center crop to 1:1
-      const sx = (img.width - size) / 2;
-      const sy = (img.height - size) / 2;
-      ctx.drawImage(img, sx, sy, size, size, 0, 0, size, size);
+      // Enable image smoothing for better quality downscaling
+      ctx.imageSmoothingEnabled = true;
+      ctx.imageSmoothingQuality = "high";
+
+      // Center crop to 1:1 and scale down to output size
+      const cropSize = Math.min(img.width, img.height);
+      const sx = (img.width - cropSize) / 2;
+      const sy = (img.height - cropSize) / 2;
+      ctx.drawImage(img, sx, sy, cropSize, cropSize, 0, 0, outputSize, outputSize);
 
       // Add text overlay if provided
       if (overlayText.trim()) {
         // Add 40% shade overlay
         ctx.fillStyle = "rgba(0, 0, 0, 0.4)";
-        ctx.fillRect(0, 0, size, size);
+        ctx.fillRect(0, 0, outputSize, outputSize);
 
         // Configure text
         ctx.fillStyle = "white";
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
 
-        const padding = size * 0.1;
-        const maxWidth = size - padding * 2;
+        const padding = outputSize * 0.1;
+        const maxWidth = outputSize - padding * 2;
         const text = overlayText.trim();
 
         // Find optimal font size
-        let fontSize = size * 0.5;
+        let fontSize = outputSize * 0.5;
         ctx.font = `bold ${fontSize}px sans-serif`;
 
         // Word wrap function
@@ -110,7 +115,7 @@ const UEFNProjectIconGenerator = () => {
         // Draw text with stroke for better visibility
         const lineHeight = fontSize * 1.2;
         const totalHeight = lines.length * lineHeight;
-        const startY = (size - totalHeight) / 2 + lineHeight / 2;
+        const startY = (outputSize - totalHeight) / 2 + lineHeight / 2;
 
         // Configure stroke for outline effect
         ctx.strokeStyle = "rgba(0, 0, 0, 0.9)";
@@ -126,11 +131,11 @@ const UEFNProjectIconGenerator = () => {
           ctx.shadowOffsetX = 0;
           ctx.shadowOffsetY = fontSize * 0.05;
           // Draw stroke (outline)
-          ctx.strokeText(line, size / 2, y);
+          ctx.strokeText(line, outputSize / 2, y);
           // Reset shadow for fill
           ctx.shadowColor = "transparent";
           // Draw fill
-          ctx.fillText(line, size / 2, y);
+          ctx.fillText(line, outputSize / 2, y);
         });
       }
 
