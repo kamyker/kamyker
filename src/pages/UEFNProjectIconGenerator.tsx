@@ -8,6 +8,19 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const fontOptions = [
+  { value: "'Burbank Big Condensed', 'Impact', sans-serif", label: "Burbank (Fortnite)" },
+  { value: "Impact, sans-serif", label: "Impact" },
+  { value: "'Arial Black', sans-serif", label: "Arial Black" },
+  { value: "'Bebas Neue', sans-serif", label: "Bebas Neue" },
+  { value: "'Oswald', sans-serif", label: "Oswald" },
+  { value: "'Roboto Condensed', sans-serif", label: "Roboto Condensed" },
+  { value: "'Anton', sans-serif", label: "Anton" },
+  { value: "'Teko', sans-serif", label: "Teko" },
+  { value: "'Russo One', sans-serif", label: "Russo One" },
+  { value: "'Staatliches', sans-serif", label: "Staatliches" },
+  { value: "'Bungee', sans-serif", label: "Bungee" },
+  { value: "'Bangers', sans-serif", label: "Bangers" },
+  { value: "'Permanent Marker', cursive", label: "Permanent Marker" },
   { value: "sans-serif", label: "Sans Serif" },
   { value: "serif", label: "Serif" },
   { value: "monospace", label: "Monospace" },
@@ -19,7 +32,7 @@ const UEFNProjectIconGenerator = () => {
   const [imageUrl, setImageUrl] = useState("");
   const [overlayText, setOverlayText] = useState("");
   const [fontSize, setFontSize] = useState(50);
-  const [fontFamily, setFontFamily] = useState("sans-serif");
+  const [fontFamily, setFontFamily] = useState("'Burbank Big Condensed', 'Impact', sans-serif");
   const [generatedImage, setGeneratedImage] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -80,7 +93,7 @@ const UEFNProjectIconGenerator = () => {
         const maxWidth = outputSize - padding * 2;
         const text = overlayText.trim();
 
-        // Use user-specified font size (percentage of output size)
+        // Use user-specified font size (percentage of output size, scaled so 100% fills the image)
         let currentFontSize = outputSize * (fontSize / 100);
         ctx.font = `bold ${currentFontSize}px ${fontFamily}`;
 
