@@ -210,11 +210,13 @@ const UEFNProjectIconGenerator = () => {
 
             {generatedImage && (
               <div className="space-y-4 pt-6 border-t border-primary/20">
+              <div className="flex justify-center">
                 <img 
                   src={generatedImage} 
                   alt="Generated icon" 
-                  className="w-full max-w-md mx-auto rounded-lg border border-primary/20"
+                  className="w-48 h-48 rounded-lg border border-primary/20"
                 />
+              </div>
                 <Button 
                   onClick={downloadImage}
                   variant="outline"
