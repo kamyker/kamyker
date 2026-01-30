@@ -309,6 +309,57 @@ const UEFNProjectIconGenerator = () => {
               </div>
             )}
           </div>
+
+          {/* How to Use Guide */}
+          <div className="mt-12 bg-card/50 border border-primary/20 rounded-2xl p-8">
+            <h2 className="font-display text-2xl font-bold mb-6 text-gradient">
+              How to Set Your Project Thumbnail
+            </h2>
+            
+            <div className="space-y-6 text-muted-foreground">
+              <div className="space-y-2">
+                <h3 className="text-foreground font-semibold">Step 1: Create your icon</h3>
+                <p>Use the generator above to create a 1:1 square PNG icon. Download it as <code className="bg-primary/20 px-2 py-0.5 rounded text-primary">project-icon.png</code></p>
+              </div>
+
+              <div className="space-y-2">
+                <h3 className="text-foreground font-semibold">Step 2: Place the image</h3>
+                <p>Copy <code className="bg-primary/20 px-2 py-0.5 rounded text-primary">project-icon.png</code> into your project's plugin folder:</p>
+                <code className="block bg-background/80 border border-primary/20 rounded-lg p-3 text-sm overflow-x-auto">
+                  YourProjectName\Plugins\YourProjectName\project-icon.png
+                </code>
+                <p className="text-sm">(Place it next to the <code className="bg-primary/20 px-1 py-0.5 rounded text-primary">.uplugin</code> file)</p>
+              </div>
+
+              <div className="space-y-2">
+                <h3 className="text-foreground font-semibold">Step 3: Edit the project file</h3>
+                <p>Open <code className="bg-primary/20 px-2 py-0.5 rounded text-primary">YourProjectName.uefnproject</code> with a text editor (located in your base project folder).</p>
+              </div>
+
+              <div className="space-y-2">
+                <h3 className="text-foreground font-semibold">Step 4: Add the keyArt property</h3>
+                <p>Add or update the <code className="bg-primary/20 px-2 py-0.5 rounded text-primary">"keyArt"</code> value with your filename:</p>
+                <code className="block bg-background/80 border border-primary/20 rounded-lg p-3 text-sm">
+                  "keyArt": "project-icon.png"
+                </code>
+              </div>
+
+              <div className="mt-6 p-4 bg-primary/5 border border-primary/30 rounded-lg">
+                <p className="text-sm">
+                  <span className="text-primary font-semibold">Alternative:</span> You can also place thumbnails in a <code className="bg-primary/20 px-1 py-0.5 rounded text-primary">Resources</code> folder (next to Content folder). Just include the path: <code className="bg-primary/20 px-1 py-0.5 rounded text-primary">"keyArt": "Resources/project-icon.png"</code>
+                </p>
+              </div>
+
+              <a 
+                href="https://dev.epicgames.com/community/learning/tutorials/mMPq/fortnite-how-to-set-project-browser-thumbnail" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block text-primary hover:text-primary/80 underline underline-offset-4 transition-colors"
+              >
+                View original Epic Games tutorial →
+              </a>
+            </div>
+          </div>
         </div>
       </main>
 
