@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
-import { Download } from "lucide-react";
+import { Download, Upload } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -270,8 +270,39 @@ const UEFNProjectIconGenerator = () => {
 
           <div className="space-y-6 bg-card/50 border border-primary/20 rounded-2xl p-8">
             <div className="space-y-2">
-              <Label htmlFor="imageUrl">Link to any image</Label>
-              <Input id="imageUrl" type="url" placeholder="https://example.com/image.jpg" value={imageUrl} onChange={e => setImageUrl(e.target.value)} className="bg-background/50" />
+              <Label>Image Source</Label>
+              <div className="flex gap-3">
+                <Input 
+                  id="imageUrl" 
+                  type="url" 
+                  placeholder="https://example.com/image.jpg" 
+                  value={imageUrl} 
+                  onChange={e => setImageUrl(e.target.value)} 
+                  className="bg-background/50 flex-1" 
+                />
+                <div className="relative">
+                  <input
+                    type="file"
+                    accept="image/*"
+                    onChange={e => {
+                      const file = e.target.files?.[0];
+                      if (file) {
+                        const reader = new FileReader();
+                        reader.onload = (event) => {
+                          setImageUrl(event.target?.result as string);
+                        };
+                        reader.readAsDataURL(file);
+                      }
+                    }}
+                    className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                  />
+                  <Button type="button" variant="outline" className="pointer-events-none">
+                    <Upload className="w-4 h-4 mr-2" />
+                    Upload
+                  </Button>
+                </div>
+              </div>
+              <p className="text-xs text-muted-foreground">Paste an image URL or upload from your device</p>
             </div>
 
             <div className="space-y-2">
