@@ -80,7 +80,7 @@ const fontOptions = [{
 const UEFNProjectIconGenerator = () => {
   const [imageUrl, setImageUrl] = useState("");
   const [overlayText, setOverlayText] = useState("");
-  const [fontSize, setFontSize] = useState(50);
+  const [fontSize, setFontSize] = useState(90);
   const [fontFamily, setFontFamily] = useState("Arial, sans-serif");
   const fontFamilyRef = useRef(fontFamily);
   const [generatedImage, setGeneratedImage] = useState<string | null>(null);
