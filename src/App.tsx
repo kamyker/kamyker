@@ -14,7 +14,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/kamyker">
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/uefn-project-icon-generator" element={<UEFNProjectIconGenerator />} />
