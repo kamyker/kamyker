@@ -23,6 +23,9 @@ const loadBurbankFont = async () => {
   document.fonts.add(font);
 };
 const fontOptions = [{
+  value: "Arial, sans-serif",
+  label: "Arial"
+}, {
   value: "'Burbank Big Condensed', Arial, sans-serif",
   label: "Burbank (Fortnite)"
 }, {
@@ -62,9 +65,6 @@ const fontOptions = [{
   value: "'Permanent Marker', Arial, sans-serif",
   label: "Permanent Marker"
 }, {
-  value: "Arial, sans-serif",
-  label: "Arial"
-}, {
   value: "sans-serif",
   label: "Sans Serif"
 }, {
@@ -81,7 +81,8 @@ const UEFNProjectIconGenerator = () => {
   const [imageUrl, setImageUrl] = useState("");
   const [overlayText, setOverlayText] = useState("");
   const [fontSize, setFontSize] = useState(50);
-  const [fontFamily, setFontFamily] = useState("'Burbank Big Condensed', Arial, sans-serif");
+  const [fontFamily, setFontFamily] = useState("Arial, sans-serif");
+  const fontFamilyRef = useRef(fontFamily);
   const [generatedImage, setGeneratedImage] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -92,6 +93,11 @@ const UEFNProjectIconGenerator = () => {
     loadGoogleFonts();
     loadBurbankFont();
   }, []);
+
+  // Keep fontFamily ref in sync
+  useEffect(() => {
+    fontFamilyRef.current = fontFamily;
+  }, [fontFamily]);
   const createIcon = async () => {
     if (!imageUrl.trim()) {
       setError("Please enter an image URL");
@@ -142,7 +148,7 @@ const UEFNProjectIconGenerator = () => {
 
         // Use user-specified font size (percentage of output size, scaled so 100% fills the image)
         let currentFontSize = outputSize * (fontSize / 100);
-        ctx.font = `bold ${currentFontSize}px ${fontFamily}`;
+        ctx.font = `bold ${currentFontSize}px ${fontFamilyRef.current}`;
 
         // Word wrap function
         const wrapText = (text: string, maxWidth: number): string[] => {
@@ -170,14 +176,14 @@ const UEFNProjectIconGenerator = () => {
         const maxLines = 4;
         while (lines.length > maxLines && currentFontSize > 10) {
           currentFontSize *= 0.9;
-          ctx.font = `bold ${currentFontSize}px ${fontFamily}`;
+          ctx.font = `bold ${currentFontSize}px ${fontFamilyRef.current}`;
           lines = wrapText(text, maxWidth);
         }
 
         // If still too many lines, reduce font size more
         while (lines.some(line => ctx.measureText(line).width > maxWidth) && currentFontSize > 10) {
           currentFontSize *= 0.9;
-          ctx.font = `bold ${currentFontSize}px ${fontFamily}`;
+          ctx.font = `bold ${currentFontSize}px ${fontFamilyRef.current}`;
           lines = wrapText(text, maxWidth);
         }
 
