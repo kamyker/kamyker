@@ -146,8 +146,52 @@ const UEFNProjectIconGenerator = () => {
         const maxWidth = outputSize - padding * 2;
         const text = overlayText.trim();
 
-        // Use user-specified font size (percentage of output size, scaled so 100% fills the image)
-        let currentFontSize = outputSize * (fontSize / 100);
+        // Calculate optimal font size that fills the width, then apply user's percentage
+        const findOptimalFontSize = (text: string, maxWidth: number): number => {
+          let testSize = 200;
+          ctx.font = `bold ${testSize}px ${fontFamilyRef.current}`;
+          
+          // For single line, find size that fits width
+          const words = text.split(" ");
+          if (words.length === 1) {
+            while (ctx.measureText(text).width > maxWidth && testSize > 10) {
+              testSize -= 2;
+              ctx.font = `bold ${testSize}px ${fontFamilyRef.current}`;
+            }
+            return testSize;
+          }
+          
+          // For multi-word, find size where wrapped text fits nicely
+          const wrapAtSize = (size: number): string[] => {
+            ctx.font = `bold ${size}px ${fontFamilyRef.current}`;
+            const lines: string[] = [];
+            let currentLine = "";
+            for (const word of words) {
+              const testLine = currentLine ? `${currentLine} ${word}` : word;
+              if (ctx.measureText(testLine).width > maxWidth && currentLine) {
+                lines.push(currentLine);
+                currentLine = word;
+              } else {
+                currentLine = testLine;
+              }
+            }
+            if (currentLine) lines.push(currentLine);
+            return lines;
+          };
+          
+          // Find size where text fits in 1-3 lines
+          while (testSize > 10) {
+            const lines = wrapAtSize(testSize);
+            const allLinesFit = lines.every(line => ctx.measureText(line).width <= maxWidth);
+            if (lines.length <= 3 && allLinesFit) break;
+            testSize -= 2;
+            ctx.font = `bold ${testSize}px ${fontFamilyRef.current}`;
+          }
+          return testSize;
+        };
+
+        const optimalSize = findOptimalFontSize(text, maxWidth);
+        let currentFontSize = optimalSize * (fontSize / 100);
         ctx.font = `bold ${currentFontSize}px ${fontFamilyRef.current}`;
 
         // Word wrap function
@@ -171,21 +215,7 @@ const UEFNProjectIconGenerator = () => {
           return lines;
         };
 
-        // Adjust font size to fit if needed
-        let lines = wrapText(text, maxWidth);
-        const maxLines = 4;
-        while (lines.length > maxLines && currentFontSize > 10) {
-          currentFontSize *= 0.9;
-          ctx.font = `bold ${currentFontSize}px ${fontFamilyRef.current}`;
-          lines = wrapText(text, maxWidth);
-        }
-
-        // If still too many lines, reduce font size more
-        while (lines.some(line => ctx.measureText(line).width > maxWidth) && currentFontSize > 10) {
-          currentFontSize *= 0.9;
-          ctx.font = `bold ${currentFontSize}px ${fontFamilyRef.current}`;
-          lines = wrapText(text, maxWidth);
-        }
+        const lines = wrapText(text, maxWidth);
 
         // Draw text with stroke for better visibility
         const lineHeight = currentFontSize * 1.2;
