@@ -282,7 +282,16 @@ const UEFNProjectIconGenerator = () => {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="fontSize">Font Size (%)</Label>
-                <Input id="fontSize" type="number" min={10} max={100} value={fontSize} onChange={e => setFontSize(Math.min(100, Math.max(10, Number(e.target.value))))} className="bg-background/50" />
+                <Input 
+                  id="fontSize" 
+                  type="number" 
+                  min={10} 
+                  max={100} 
+                  value={fontSize} 
+                  onChange={e => setFontSize(Number(e.target.value) || 0)} 
+                  onBlur={e => setFontSize(Math.min(100, Math.max(10, Number(e.target.value) || 50)))}
+                  className="bg-background/50" 
+                />
               </div>
 
               <div className="space-y-2">
