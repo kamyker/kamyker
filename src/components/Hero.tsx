@@ -1,5 +1,6 @@
 import { ArrowDown, Code2, Gamepad2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { getBasePath } from "@/lib/basePath";
 
 const Hero = () => {
   return (
@@ -45,19 +46,19 @@ const Hero = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up" style={{ animationDelay: '0.3s' }}>
             <Button variant="hero" asChild>
-              <a href="#projects">
+              <a href={getBasePath("#projects")}>
                 <Code2 className="w-5 h-5" />
                 View Projects
               </a>
             </Button>
             <Button variant="outline" size="xl" asChild>
-              <a href="#contact">Get in Touch</a>
+              <a href={getBasePath("#contact")}>Get in Touch</a>
             </Button>
           </div>
 
           {/* Scroll indicator */}
           <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-float">
-            <a href="#projects" className="text-muted-foreground hover:text-primary transition-colors">
+            <a href={getBasePath("#projects")} className="text-muted-foreground hover:text-primary transition-colors">
               <ArrowDown className="w-6 h-6" />
             </a>
           </div>
