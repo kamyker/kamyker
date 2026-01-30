@@ -15,6 +15,13 @@ const loadGoogleFonts = () => {
   link.rel = "stylesheet";
   document.head.appendChild(link);
 };
+
+// Preload Burbank font for canvas usage
+const loadBurbankFont = async () => {
+  const font = new FontFace('Burbank Big Condensed', 'url(/fonts/Burbank_Big_Regular_Bold.otf)');
+  await font.load();
+  document.fonts.add(font);
+};
 const fontOptions = [{
   value: "'Burbank Big Condensed', Arial, sans-serif",
   label: "Burbank (Fortnite)"
@@ -80,9 +87,10 @@ const UEFNProjectIconGenerator = () => {
   const [error, setError] = useState<string | null>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
-  // Load Google Fonts on mount
+  // Load fonts on mount
   useEffect(() => {
     loadGoogleFonts();
+    loadBurbankFont();
   }, []);
   const createIcon = async () => {
     if (!imageUrl.trim()) {
