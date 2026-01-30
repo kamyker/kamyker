@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import UEFNProjectIconGenerator from "./pages/UEFNProjectIconGenerator";
+import { BASE_PATH } from "./lib/basePath";
 
 const queryClient = new QueryClient();
 
@@ -14,7 +15,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter basename="/kamyker">
+      <BrowserRouter basename={BASE_PATH || undefined}>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/uefn-project-icon-generator" element={<UEFNProjectIconGenerator />} />
