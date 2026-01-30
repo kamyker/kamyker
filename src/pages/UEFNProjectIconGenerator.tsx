@@ -344,7 +344,7 @@ const UEFNProjectIconGenerator = () => {
                 <h3 className="text-foreground font-semibold">Step 2: Place the image</h3>
                 <p>Copy <code className="bg-primary/20 px-2 py-0.5 rounded text-primary">project-icon.png</code> into your project's plugin folder:</p>
                 <code className="block bg-background/80 border border-primary/20 rounded-lg p-3 text-sm overflow-x-auto">YourProjectName\project-icon.png</code>
-                <p className="text-sm">.uefnproject<code className="bg-primary/20 px-1 py-0.5 rounded text-primary">.uplugin</code> file)</p>
+                <p className="text-sm">(next to <code className="bg-primary/20 px-1 py-0.5 rounded text-primary">.uefnproject</code> file)</p>
               </div>
 
               <div className="space-y-2">
