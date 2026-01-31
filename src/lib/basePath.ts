@@ -1,6 +1,5 @@
-// Base path for GitHub Pages deployment
-// In production (GitHub Pages), use '/kamyker', in development use ''
-export const BASE_PATH = import.meta.env.PROD ? "/kamyker" : "";
+// Base path - custom domain serves from root
+export const BASE_PATH = "";
 
 // Helper to create absolute URLs with the base path
 export const getBasePath = (path: string = "") => {
