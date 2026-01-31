@@ -150,7 +150,7 @@ const UEFNProjectIconGenerator = () => {
         const findOptimalFontSize = (text: string, maxWidth: number): number => {
           let testSize = 200;
           ctx.font = `bold ${testSize}px ${fontFamilyRef.current}`;
-          
+
           // For single line, find size that fits width
           const words = text.split(" ");
           if (words.length === 1) {
@@ -160,7 +160,7 @@ const UEFNProjectIconGenerator = () => {
             }
             return testSize;
           }
-          
+
           // For multi-word, find size where wrapped text fits nicely
           const wrapAtSize = (size: number): string[] => {
             ctx.font = `bold ${size}px ${fontFamilyRef.current}`;
@@ -178,7 +178,7 @@ const UEFNProjectIconGenerator = () => {
             if (currentLine) lines.push(currentLine);
             return lines;
           };
-          
+
           // Find size where text fits in 1-3 lines
           while (testSize > 10) {
             const lines = wrapAtSize(testSize);
@@ -189,7 +189,6 @@ const UEFNProjectIconGenerator = () => {
           }
           return testSize;
         };
-
         const optimalSize = findOptimalFontSize(text, maxWidth);
         let currentFontSize = optimalSize * (fontSize / 100);
         ctx.font = `bold ${currentFontSize}px ${fontFamilyRef.current}`;
@@ -214,7 +213,6 @@ const UEFNProjectIconGenerator = () => {
           }
           return lines;
         };
-
         const lines = wrapText(text, maxWidth);
 
         // Draw text with stroke for better visibility
@@ -272,30 +270,18 @@ const UEFNProjectIconGenerator = () => {
             <div className="space-y-2">
               <Label>Image Source</Label>
               <div className="flex gap-3">
-                <Input 
-                  id="imageUrl" 
-                  type="url" 
-                  placeholder="https://example.com/image.jpg" 
-                  value={imageUrl} 
-                  onChange={e => setImageUrl(e.target.value)} 
-                  className="bg-background/50 flex-1" 
-                />
+                <Input id="imageUrl" type="url" placeholder="https://example.com/image.jpg" value={imageUrl} onChange={e => setImageUrl(e.target.value)} className="bg-background/50 flex-1" />
                 <div className="relative">
-                  <input
-                    type="file"
-                    accept="image/*"
-                    onChange={e => {
-                      const file = e.target.files?.[0];
-                      if (file) {
-                        const reader = new FileReader();
-                        reader.onload = (event) => {
-                          setImageUrl(event.target?.result as string);
-                        };
-                        reader.readAsDataURL(file);
-                      }
-                    }}
-                    className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
-                  />
+                  <input type="file" accept="image/*" onChange={e => {
+                  const file = e.target.files?.[0];
+                  if (file) {
+                    const reader = new FileReader();
+                    reader.onload = event => {
+                      setImageUrl(event.target?.result as string);
+                    };
+                    reader.readAsDataURL(file);
+                  }
+                }} className="absolute inset-0 w-full h-full opacity-0 cursor-pointer" />
                   <Button type="button" variant="outline" className="pointer-events-none">
                     <Upload className="w-4 h-4 mr-2" />
                     Upload
@@ -313,16 +299,7 @@ const UEFNProjectIconGenerator = () => {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="fontSize">Font Size (%)</Label>
-                <Input 
-                  id="fontSize" 
-                  type="number" 
-                  min={10} 
-                  max={100} 
-                  value={fontSize} 
-                  onChange={e => setFontSize(Number(e.target.value) || 0)} 
-                  onBlur={e => setFontSize(Math.min(100, Math.max(10, Number(e.target.value) || 50)))}
-                  className="bg-background/50" 
-                />
+                <Input id="fontSize" type="number" min={10} max={100} value={fontSize} onChange={e => setFontSize(Number(e.target.value) || 0)} onBlur={e => setFontSize(Math.min(100, Math.max(10, Number(e.target.value) || 50)))} className="bg-background/50" />
               </div>
 
               <div className="space-y-2">
@@ -373,14 +350,14 @@ const UEFNProjectIconGenerator = () => {
 
               <div className="space-y-2">
                 <h3 className="text-foreground font-semibold">Step 2: Place the image</h3>
-                <p>Copy <code className="bg-primary/20 px-2 py-0.5 rounded text-primary">project-icon.png</code> into your project's plugin folder:</p>
+                <p>Copy project-icon.png into your project's folder:<code className="bg-primary/20 px-2 py-0.5 rounded text-primary">project-icon.png</code> into your project's plugin folder:</p>
                 <code className="block bg-background/80 border border-primary/20 rounded-lg p-3 text-sm overflow-x-auto">YourProjectName\project-icon.png</code>
-                <p className="text-sm">(next to <code className="bg-primary/20 px-1 py-0.5 rounded text-primary">.uefnproject</code> file)</p>
+                
               </div>
 
               <div className="space-y-2">
                 <h3 className="text-foreground font-semibold">Step 3: Edit the project file</h3>
-                <p>Open <code className="bg-primary/20 px-2 py-0.5 rounded text-primary">YourProjectName.uefnproject</code> with a text editor (located in your base project folder).</p>
+                <p>Open YourProjectName.uefnproject with a text editor.<code className="bg-primary/20 px-2 py-0.5 rounded text-primary">YourProjectName.uefnproject</code> with a text editor (located in your base project folder).</p>
               </div>
 
               <div className="space-y-2">
