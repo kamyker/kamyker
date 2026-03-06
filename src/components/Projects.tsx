@@ -72,12 +72,13 @@ Map hit homebar after optimizations! 🎉`,
     image: "https://cdn-0001.qstv.on.epicgames.com/iskkhxfhUWnkTsJjfu/image/landscape_comp.jpeg",
     tags: ["UEFN", "Optimization", "Commission", "Performance"]
 }, {
-    title: "STEAL THE BRIANROT",
+    title: "STEAL THE BRAINROT",
     description: `Commission to optimize Ferin's map project size:
 • Project download size: -40mb
 • Memory: -4k`,
     image: "https://cdn-0001.qstv.on.epicgames.com/UadMAVPfUxYtvICMRP/image/landscape_comp.jpeg",
-    tags: ["UEFN", "Optimization", "Commission", "Performance"]
+    tags: ["UEFN", "Optimization", "Commission", "Performance"],
+    demoUrl: "https://fortnite.gg/island?code=3225-0366-8885"
 }, {
     title: "CRAZY 1V1 FFA",
     description: `Commission to optimize lag for Hozzy's map that made the game unplayable in longer sessions:
