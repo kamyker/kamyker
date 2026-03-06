@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import UEFNProjectIconGenerator from "./pages/UEFNProjectIconGenerator";
 import SkeletalMeshConverter from "./pages/SkeletalMeshConverter";
+import UefnProfileAverage from "./pages/UefnProfileAverage";
 import { BASE_PATH } from "./lib/basePath";
 
 const queryClient = new QueryClient();
@@ -21,6 +22,7 @@ const App = () => (
                     <Route path="/" element={<Index />} />
                     <Route path="/uefn-project-icon-generator" element={<UEFNProjectIconGenerator />} />
                     <Route path="/tool-convert-skeletal-mesh" element={<SkeletalMeshConverter />} />
+                    <Route path="/uefn-profile-average" element={<UefnProfileAverage />} />
                     {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                     <Route path="*" element={<NotFound />} />
                 </Routes>
