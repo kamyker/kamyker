@@ -31,6 +31,11 @@ const Header = () =>
                                     Make Project Icon
                                 </Link>
                             </DropdownMenuItem>
+                            <DropdownMenuItem asChild>
+                                <Link to="/verse-updates" className="cursor-pointer">
+                                    Verse Updates
+                                </Link>
+                            </DropdownMenuItem>
                         </DropdownMenuContent>
                     </DropdownMenu>
                     <a href={getBasePath("#projects")} className="text-muted-foreground hover:text-primary transition-colors text-sm uppercase tracking-wider font-display">

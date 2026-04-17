@@ -190,7 +190,7 @@ const UEFNProjectIconGenerator = () => {
           return testSize;
         };
         const optimalSize = findOptimalFontSize(text, maxWidth);
-        let currentFontSize = optimalSize * (fontSize / 100);
+        const currentFontSize = optimalSize * (fontSize / 100);
         ctx.font = `bold ${currentFontSize}px ${fontFamilyRef.current}`;
 
         // Word wrap function

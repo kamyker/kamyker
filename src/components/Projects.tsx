@@ -22,7 +22,7 @@ const projects = [{
     image: "https://cdn-0001.qstv.on.epicgames.com/dhhrVLXpRImiPtpJKy/image/landscape_comp_s.jpeg",
     embeddedVideoUrl: "https://a.storyblok.com/f/231265/x/2b2807db47/logadodanerp-1.mp4",
     tags: ["UEFN", "Fortnite", "Verse", "Reporter Young"],
-    demoUrl: "https://www.fortnite.com/@fnbl0",
+    demoUrl: "https://fortnite.gg/island?code=9441-8610-2332",
     featured: true
 }, {
     title: "Beat Aim",
