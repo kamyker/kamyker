@@ -90,6 +90,29 @@ This was done in mid-December, map got into homebar at the end of the month with
     image: "/images/crazy-1v1-ffa.png",
     tags: ["UEFN", "Optimization", "Commission", "Performance"]
 }];
+
+const optimizedMaps = [{
+    title: "Memes Vs Brainrots",
+    image: "https://cdn-0001.qstv.on.epicgames.com/XEtSHffusKlKOlVVKc/image/landscape_comp.jpeg",
+    url: "https://fortnite.gg/island/9810-2147-6885"
+}, {
+    title: "Fort Lock: Soccer/Football",
+    image: "https://cdn-0001.qstv.on.epicgames.com/PGFTUSudaXwGYSQQtL/image/landscape_comp.jpeg",
+    url: "https://fortnite.gg/island/1652-7714-7390"
+}, {
+    title: "SECRET RED VS BLUE",
+    image: "https://cdn-0001.qstv.on.epicgames.com/DcgSrTAZZOFRCkEmLT/image/landscape_comp.jpeg",
+    url: "https://fortnite.gg/island/2679-7442-3940"
+}, {
+    title: "Mr. Pickle 2 Fall Guys",
+    image: "/images/mr-pickle-student-run.jpeg",
+    url: "https://fortnite.gg/island/1683-6205-8518"
+}, {
+    title: "BEST 1V1",
+    image: "https://cdn-0001.qstv.on.epicgames.com/sZBRsFuhRYkxBCVGWf/image/landscape_comp.jpeg",
+    url: "https://fortnite.gg/island/8880-2011-6281"
+}];
+
 const Projects = () =>
 {
     return <section id="projects" className="py-24 relative">
@@ -124,6 +147,41 @@ const Projects = () =>
 
             <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
                 {pastCommissions.map(project => <ProjectCard key={project.title} {...project} />)}
+            </div>
+
+            <div className="mt-24">
+                <div className="text-center mb-12">
+                    <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
+                        <span className="text-gradient glow-text">Optimized</span> Maps
+                    </h2>
+                </div>
+
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
+                    {optimizedMaps.map(map => (
+                        <a
+                            key={map.url}
+                            href={map.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group relative block aspect-video overflow-hidden rounded-xl border border-secondary/30 bg-gradient-card transition-all duration-500 hover:border-primary/60 hover:shadow-neon"
+                        >
+                            <img
+                                src={map.image}
+                                alt={map.title}
+                                onError={event => {
+                                    event.currentTarget.style.display = "none";
+                                }}
+                                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-card/80 via-card/10 to-transparent" />
+                            <div className="absolute bottom-0 left-0 right-0 p-4">
+                                <h3 className="font-display text-sm font-bold uppercase tracking-wider text-foreground">
+                                    {map.title}
+                                </h3>
+                            </div>
+                        </a>
+                    ))}
+                </div>
             </div>
         </div>
     </section>;

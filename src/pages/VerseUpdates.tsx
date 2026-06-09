@@ -45,6 +45,8 @@ const DIGEST_FILES = [
   { name: "UnrealEngine.digest.verse", path: "Modules/FortniteGame/UnrealEngine/UnrealEngine.digest.verse", id: "unreal" },
 ];
 
+const HEAD_VERSION = { name: "v41.00", sha: "05b7e42326bcf4ef86d3911f46ffd0f33e0c6c34" };
+const BASE_VERSION = { name: "v40.40", sha: "1f5dbc19af02096bc40fbe4baffc81c2fa093643" };
 
 interface FileState {
   diff: DiffLine[] | null;
@@ -79,7 +81,7 @@ const VerseUpdates = () => {
     let hasCache = false;
 
     DIGEST_FILES.forEach(file => {
-      const CACHE_KEY = `verse_updates_cache_v5_${file.path.replace(/\//g, '_')}`;
+      const CACHE_KEY = `verse_updates_cache_v6_${file.path.replace(/\//g, '_')}`;
       const cached = localStorage.getItem(CACHE_KEY);
       if (cached) {
         const parsed = JSON.parse(cached);
@@ -108,7 +110,7 @@ const VerseUpdates = () => {
     }));
 
     try {
-      const CACHE_KEY = `verse_updates_cache_v5_${file.path.replace(/\//g, '_')}`;
+      const CACHE_KEY = `verse_updates_cache_v6_${file.path.replace(/\//g, '_')}`;
       const CACHE_TTL = 1000 * 60 * 15; // 15 minutes
       
       const cached = localStorage.getItem(CACHE_KEY);
@@ -136,35 +138,13 @@ const VerseUpdates = () => {
         return response;
       };
 
-      const commitsResponse = await authFetch(
-        `https://api.github.com/repos/vz-creates/uefn/commits?path=${file.path}&per_page=2`
-      );
-      
-      if (!commitsResponse.ok) {
-        if (commitsResponse.status === 403) {
-          setIsRateLimited(true);
-          throw new Error("GitHub API rate limit exceeded.");
-        }
-        throw new Error(`Commits fetch failed: ${commitsResponse.statusText}`);
-      }
-      
-      const commitsData = await commitsResponse.json();
-      
-      if (cached) {
-        const parsed = JSON.parse(cached);
-        if (parsed.commits[0]?.sha === commitsData[0]?.sha) {
-          parsed.timestamp = Date.now();
-          localStorage.setItem(CACHE_KEY, JSON.stringify(parsed));
-          setFilesData(prev => ({
-            ...prev,
-            [fileId]: { ...prev[fileId], diff: parsed.diff, commits: parsed.commits, isLoading: false, hasStarted: true }
-          }));
-          return;
-        }
-      }
+      const commitsData = [
+        { sha: HEAD_VERSION.sha, commit: { message: HEAD_VERSION.name, author: { date: "" } } },
+        { sha: BASE_VERSION.sha, commit: { message: BASE_VERSION.name, author: { date: "" } } },
+      ] as Commit[];
 
-      const headSha = commitsData[0].sha;
-      const baseSha = commitsData[1].sha;
+      const headSha = HEAD_VERSION.sha;
+      const baseSha = BASE_VERSION.sha;
 
       const fetchFileContent = async (sha: string) => {
         const response = await authFetch(`https://api.github.com/repos/vz-creates/uefn/contents/${file.path}?ref=${sha}`);
@@ -400,14 +380,14 @@ const VerseUpdates = () => {
                             {data.commits.length >= 2 && (
                               <div className="grid grid-cols-2 gap-px bg-primary/10 border-b border-primary/20">
                                 <div className="bg-background/40 p-3">
-                                  <p className="text-[10px] text-muted-foreground uppercase tracking-wider font-bold mb-1">Latest Version: {data.commits[0].sha.substring(0, 7)}</p>
-                                  <p className="text-xs font-medium truncate">{data.commits[0].commit.message}</p>
-                                  <p className="text-[9px] text-muted-foreground mt-1">{new Date(data.commits[0].commit.author.date).toLocaleString()}</p>
+                                  <p className="text-[10px] text-muted-foreground uppercase tracking-wider font-bold mb-1">New Version</p>
+                                  <p className="text-xs font-medium truncate">{HEAD_VERSION.name}</p>
+                                  <p className="text-[9px] text-muted-foreground mt-1">{HEAD_VERSION.sha.substring(0, 7)}</p>
                                 </div>
                                 <div className="bg-background/40 p-3 opacity-70">
-                                  <p className="text-[10px] text-muted-foreground uppercase tracking-wider font-bold mb-1">Previous Version: {data.commits[1].sha.substring(0, 7)}</p>
-                                  <p className="text-xs font-medium truncate">{data.commits[1].commit.message}</p>
-                                  <p className="text-[9px] text-muted-foreground mt-1">{new Date(data.commits[1].commit.author.date).toLocaleString()}</p>
+                                  <p className="text-[10px] text-muted-foreground uppercase tracking-wider font-bold mb-1">Old Version</p>
+                                  <p className="text-xs font-medium truncate">{BASE_VERSION.name}</p>
+                                  <p className="text-[9px] text-muted-foreground mt-1">{BASE_VERSION.sha.substring(0, 7)}</p>
                                 </div>
                               </div>
                             )}
