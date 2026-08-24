@@ -17,6 +17,14 @@ const projects = [{
         url: "https://www.thedrummarketingawards.com/emea/en/page/results#/dma-emea/2025/metaverse/how-bank-pekao-s-a-became-sigma"
     }
 }, {
+    title: "Paint And Seek",
+    description: "A paint-and-seek map where players paint freely in-world with a custom brush system with sophisticated painting system in UEFN Scene Graph. Paint yourself any way you want, blend into the environment, and hide as tiny characters.",
+    image: "/images/uefn-painting-system.jpg",
+    embeddedVideoUrl: "/videos/uefn-painting-system.mp4",
+    tags: ["UEFN", "Fortnite", "Verse", "Scene Graph", "Painting"],
+    demoUrl: "https://fortnite.gg/island/6031-2794-1295",
+    featured: true
+}, {
     title: "Drip Shop Tycoon - Reporter Young",
     description: "A branded tycoon experience for Reporter Young clothing brand with over 700,000 plays. Players build and manage their own clothing shop, expanding their fashion empire in Fortnite.",
     image: "https://cdn-0001.qstv.on.epicgames.com/dhhrVLXpRImiPtpJKy/image/landscape_comp_s.jpeg",
