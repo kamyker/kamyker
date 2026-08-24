@@ -10,7 +10,7 @@ const Pricing = () => {
             <span className="text-gradient glow-text">Pricing</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            I work at an hourly rate of <span className="text-foreground font-semibold">$60/hour</span>. Creating accurate quotes takes significant time, so I prefer to bill for actual hours worked. Upfront payment may be required for new clients.
+            I work at an hourly rate of <span className="text-foreground font-semibold">$70/hour</span>. Creating accurate quotes takes significant time, so I prefer to bill for actual hours worked. Upfront payment may be required for new clients.
           </p>
         </div>
 
@@ -21,7 +21,7 @@ const Pricing = () => {
                 Basic Optimization
               </h3>
               <div className="flex items-baseline justify-center gap-1">
-                <span className="text-4xl font-bold text-gradient">$300</span>
+                <span className="text-4xl font-bold text-gradient">$350</span>
                 <span className="text-muted-foreground">/ ~5 hours</span>
               </div>
             </div>
@@ -52,7 +52,7 @@ const Pricing = () => {
                 Better Optimization
               </h3>
               <div className="flex items-baseline justify-center gap-1">
-                <span className="text-4xl font-bold text-gradient-orange">$600-1200</span>
+                <span className="text-4xl font-bold text-gradient-orange">$700-1400</span>
               </div>
             </div>
             
@@ -86,7 +86,7 @@ const Pricing = () => {
                 Other
               </h3>
               <div className="flex items-baseline justify-center gap-1">
-                <span className="text-4xl font-bold text-gradient">$60</span>
+                <span className="text-4xl font-bold text-gradient">$70</span>
                 <span className="text-muted-foreground">/ hour</span>
               </div>
             </div>
